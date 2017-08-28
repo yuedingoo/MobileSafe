@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yueding.mobilesafe.HomeActivity"
+    tools:layout_editor_absoluteY="25dp"
+    tools:layout_editor_absoluteX="0dp">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:text="@string/menu_list"
+        android:textSize="20sp"
+        android:textColor="#000"
+        android:background="#0f0"
+        android:gravity="center"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.yueding.mobilesafe.views.FocusTextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/ad"
+        android:textSize="16sp"
+        android:maxLines="1"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:id="@+id/focusTextView" />
+
+    <!-- android:verticalSpacing item竖直间距-->
+    <GridView
+        android:id="@+id/gd_list"
+        android:numColumns="3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:verticalSpacing="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/focusTextView"/>
+
+</android.support.constraint.ConstraintLayout>

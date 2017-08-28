@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/set_pwd"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:padding="10dp"
+        android:background="@color/colorAccent"
+        android:textColor="#000"/>
+    <EditText
+        android:id="@+id/edit_set_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/set_pwd"
+        android:inputType="textPassword"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"/>
+    <EditText
+        android:id="@+id/edit_confirm_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:hint="@string/confirm_pwd"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp">
+        <Button
+            android:id="@+id/bt_cancel"
+            android:text="取消"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="2dp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/bt_submit"
+            android:text="确认"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginStart="2dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>

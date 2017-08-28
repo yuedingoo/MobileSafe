@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MobileSafe</string>
+    <string name="menu_list">功能列表</string>
+    <string name="ad">我给你最后的疼爱是手放开，不想用言语拉扯，所以选择不责怪.我给你最后的疼爱是手放开，不想用言语拉扯，所以选择不责怪.</string>
+    <string name="open_update">open_update</string>
+    <string name="pwd">safe_password</string>
+    <string name="set_pwd">设置密码</string>
+    <string name="confirm_pwd">确认密码</string>
+</resources>

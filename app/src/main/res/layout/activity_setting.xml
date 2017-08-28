@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yueding.mobilesafe.SettingActivity">
+
+    <TextView
+        android:id="@+id/head"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:text="设置中心"
+        android:textSize="20sp"
+        android:textColor="#000"
+        android:background="#0f0"
+        android:gravity="center"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <com.yueding.mobilesafe.views.SettingItemView
+        android:id="@+id/siv_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:destitle="自动更新设置"
+        app:deson="自动更新已开启"
+        app:desoff="自动更新已关闭"
+        app:layout_constraintTop_toBottomOf="@+id/head"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+    </com.yueding.mobilesafe.views.SettingItemView>
+    <com.yueding.mobilesafe.views.SettingItemView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:destitle="号码归属地显示"
+        app:deson="号码归属地已开启"
+        app:desoff="号码归属地已关闭"
+        app:layout_constraintTop_toBottomOf="@+id/siv_update"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+    </com.yueding.mobilesafe.views.SettingItemView>
+</android.support.constraint.ConstraintLayout>
