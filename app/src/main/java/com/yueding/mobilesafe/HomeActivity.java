@@ -5,6 +5,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.yueding.mobilesafe.utils.Md5Util;
 import com.yueding.mobilesafe.utils.SpUtil;
 
 public class HomeActivity extends AppCompatActivity {
@@ -63,6 +65,48 @@ public class HomeActivity extends AppCompatActivity {
      * 确认密码对话框
      */
     private void showConfirmPwdDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        final AlertDialog dialog = builder.create();
+        LayoutInflater inflater = getLayoutInflater();
+        final View view = inflater.inflate(R.layout.dialog_confirm_pwd, null);
+        dialog.setView(view);
+        dialog.show();
+        Button bt_cancel = (Button) view.findViewById(R.id.bt_cancel);
+        Button bt_submit = (Button) view.findViewById(R.id.bt_submit);
+        //取消按钮点击事件
+        bt_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+        //确认按钮点击事件
+        bt_submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String password = SpUtil.getString(getApplicationContext(), getString(R.string.pwd), "");
+                EditText confirmPwd = (EditText) view.findViewById(R.id.edit_confirm_pwd);
+                String confirmPassword = confirmPwd.getText().toString();
+                //对密码进行相同MD5算法加密，因为需要验证密码正确性，而存储在手机的密码经过了MD5加密
+                String ss = confirmPassword + "mobileSafeByYueding";
+                String safePwd = Md5Util.getMD5Pro(ss);
+                if (!TextUtils.isEmpty(confirmPassword)) {
+                    //确认密码输入框输入不为空
+                    if (password.equals(safePwd)) {
+                        //设置密码与确认密码一致
+                        //进入手机防盗模块
+                        //隐藏对话框
+                        dialog.dismiss();
+                    } else {
+                        //清空确认密码输入框
+                        confirmPwd.setText("");
+                        Toast.makeText(getApplicationContext(), "密码错误", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(getApplicationContext(), "请输入密码", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
     }
 
@@ -100,6 +144,10 @@ public class HomeActivity extends AppCompatActivity {
                         //进入手机防盗模块
                         //隐藏对话框
                         dialog.dismiss();
+                        //密码加密
+                        String ss = password + "mobileSafeByYueding";
+                        String safePwd = Md5Util.getMD5Pro(ss);
+                        SpUtil.setString(getApplicationContext(), getString(R.string.pwd), safePwd);
                     } else {
                         //清空确认密码输入框
                         confirmPwd.setText("");
