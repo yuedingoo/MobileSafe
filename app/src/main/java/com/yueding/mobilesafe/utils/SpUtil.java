@@ -69,4 +69,16 @@ public class SpUtil {
     }
 
 
+    /**
+     * 从sp中移除节点（key）
+     * @param context 上下文环境
+     * @param key 存储节点名称
+     */
+    public static void remove(Context context, String key) {
+        if (sp == null) {
+            //config为存储节点文件名，不是节点名
+            sp = context.getSharedPreferences("config", Context.MODE_PRIVATE);
+        }
+        sp.edit().remove(key).apply();
+    }
 }

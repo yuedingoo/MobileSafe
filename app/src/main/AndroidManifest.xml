@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
 
     <application
         android:allowBackup="true"
@@ -20,7 +22,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".HomeActivity" />
-        <activity android:name=".SettingActivity"></activity>
+        <activity android:name=".shezhi.SettingActivity" />
+        <activity android:name=".fangdao.SetupOverActivity" />
+        <activity android:name=".fangdao.Setup1Activity" />
+        <activity android:name=".fangdao.Setup2Activity" />
+        <activity android:name=".fangdao.Setup3Activity" />
+        <activity android:name=".fangdao.Setup4Activity" />
+        <activity android:name=".fangdao.ContactsActivity"></activity>
     </application>
 
 </manifest>

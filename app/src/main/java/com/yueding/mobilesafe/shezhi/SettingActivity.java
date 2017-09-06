@@ -1,9 +1,10 @@
-package com.yueding.mobilesafe;
+package com.yueding.mobilesafe.shezhi;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.yueding.mobilesafe.R;
 import com.yueding.mobilesafe.utils.SpUtil;
 import com.yueding.mobilesafe.views.SettingItemView;
 

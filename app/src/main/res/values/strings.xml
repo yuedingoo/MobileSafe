@@ -6,4 +6,14 @@
     <string name="pwd">safe_password</string>
     <string name="set_pwd">设置密码</string>
     <string name="confirm_pwd">确认密码</string>
+    <string name="setupOver">setup_over</string>
+    <string name="setup_1">1.欢迎使用手机防盗</string>
+    <string name="next_step">下一步</string>
+    <string name="setup_2">2.手机卡绑定</string>
+    <string name="previous">上一步</string>
+    <string name="setup_3">3.设置安全号码</string>
+    <string name="sim_number">sim_number</string>
+    <string name="select_contacts">选择联系人</string>
+    <string name="phone_number">phone_number</string>
+    <string name="open_security">open_security</string>
 </resources>

@@ -5,7 +5,6 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,12 +17,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.yueding.mobilesafe.fangdao.SetupOverActivity;
+import com.yueding.mobilesafe.shezhi.SettingActivity;
 import com.yueding.mobilesafe.utils.Md5Util;
 import com.yueding.mobilesafe.utils.SpUtil;
 
 public class HomeActivity extends AppCompatActivity {
 
-    private GridView mGridView;
     private String[] mNames;
     private int[] mImages;
     @Override
@@ -31,7 +31,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         initData();
-        mGridView = (GridView) findViewById(R.id.gd_list);
+        GridView mGridView = (GridView) findViewById(R.id.gd_list);
         mGridView.setAdapter(new MyAdapter());
         mGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -95,6 +95,8 @@ public class HomeActivity extends AppCompatActivity {
                     if (password.equals(safePwd)) {
                         //设置密码与确认密码一致
                         //进入手机防盗模块
+                        Intent intent = new Intent(HomeActivity.this, SetupOverActivity.class);
+                        startActivity(intent);
                         //隐藏对话框
                         dialog.dismiss();
                     } else {
@@ -142,6 +144,8 @@ public class HomeActivity extends AppCompatActivity {
                     if (password.equals(confirmPassword)) {
                         //设置密码与确认密码一致
                         //进入手机防盗模块
+                        Intent intent = new Intent(HomeActivity.this, SetupOverActivity.class);
+                        startActivity(intent);
                         //隐藏对话框
                         dialog.dismiss();
                         //密码加密
